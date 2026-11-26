@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-toss-blue: #3182F6;
+  --color-toss-blue-hover: #1B64DA;
+  --color-toss-blue-tint: #E8F3FF;
+  --color-toss-bg: #F2F4F6;
+  --color-toss-ink: #191F28;
+  --color-toss-ink-secondary: #4E5968;
+  --color-toss-ink-muted: #8B95A1;
+  --color-toss-danger: #F04452;
+  --color-toss-success: #00C471;
+  --color-toss-warning: #FF9500;
+
+  --ease-toss: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-toss-pop: toss-pop 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-toss-slide-up: toss-slide-up 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-toss-slide-down: toss-slide-down 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-toss-shake: toss-shake 0.36s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes toss-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toss-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toss-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toss-shake {
+  10%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 80% {
+    transform: translateX(4px);
+  }
+  30%, 50%, 70% {
+    transform: translateX(-5px);
+  }
+  40%, 60% {
+    transform: translateX(5px);
+  }
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #F2F4F6;
+    color: #191F28;
+    font-feature-settings: "tnum" on, "lnum" on;
+  }
+
+  /* Subtle custom scrollbar for Toss-clean panels */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 149, 161, 0.32);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 149, 161, 0.55);
+  }
+}
+
+.code-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.code-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}

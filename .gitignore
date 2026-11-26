@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Local reference asset
+alarm.png
+
+# Environment & Logs & OS metadata
+.env
+.env.*
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
